@@ -1,0 +1,7 @@
+{
+  "name": "waterwinder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
