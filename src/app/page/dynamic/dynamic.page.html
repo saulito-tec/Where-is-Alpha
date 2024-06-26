@@ -1,0 +1,80 @@
+
+
+<ion-app >
+
+  @if (!raw) {
+    <ion-spinner>
+    </ion-spinner>
+  }
+  @else {
+    <ion-content color="dark">
+      <ion-header [translucent]="true">
+        <ion-toolbar>
+          <div>
+            <div>
+              <ion-img src="../../../assets/img/Logo.png" class="Logo" style="display: inline-block; vertical-align: middle; height: 100px; width: 100px;">
+              </ion-img>
+              <ion-title style="display: inline-block; vertical-align:middle; font-size: x-large; padding-top: 25px;">
+                Productos
+              </ion-title>
+            </div>
+          </div>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-searchbar></ion-searchbar>
+        </ion-toolbar>
+      </ion-header>
+      
+
+      <div style="display: inline-block; width: 30%; padding-top: 40px;">
+        <ion-img src={{raw.imagen}} style="padding-left: 10%;">
+        </ion-img>
+      </div>
+      <div style="display: inline-block; width: 70%; vertical-align: top; padding-top: 40px;">
+        <ion-list [inset]="true" color="primary">
+          <ion-list-header color="dark">
+            <ion-label color="light"><h2 style="font-size: xx-large;">{{raw.nombre}}</h2></ion-label>
+          </ion-list-header>
+          <ion-item color="dark">
+            <h2> Fecha de entrega: {{raw.fecha_entrega}}</h2>
+          </ion-item>
+          <ion-item color="dark">
+            <h2> Proveedor: {{raw.proveedor}}</h2>
+          </ion-item>
+          <ion-item color="dark">
+            <h2> Precio: {{raw.precio}}</h2>
+          </ion-item>
+          @if(raw.vendido == false){
+            <ion-item color="dark">
+              <h2> Vendido: Falso </h2>
+            </ion-item>
+            <ion-item color="dark">
+              <h2> Fecha de venta: N/A </h2>
+            </ion-item>
+          }
+          @else{ 
+            <ion-item color="dark">
+              <h2> Vendido: Verdadero </h2>
+            </ion-item>
+            <ion-item color="dark">
+              <h2> Fecha de venta: {{raw.fecha_venta
+              }} </h2>
+            </ion-item>
+          }
+          
+        </ion-list>
+      </div>
+      
+      
+        
+    </ion-content>
+  }
+
+
+    
+  
+
+  
+</ion-app>
+
+

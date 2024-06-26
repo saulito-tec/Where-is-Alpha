@@ -1,0 +1,37 @@
+
+
+ion-modal {
+  --height: 80%;
+  --width: 80%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal ion-toolbar {
+  --color: white;
+}
+
+@media (min-width: 580px) {
+  ion-modal {
+    --height: 80%;
+    --width: 640px;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+.col-1 {
+  width: 50%;
+  height: 100%;
+  display: inline-block; 
+  vertical-align:middle;
+  .list{
+    width: 100%;
+  }
+}
+
+.col-2 {
+  width: 50%;
+  display: inline-block; 
+  vertical-align:top;
+}

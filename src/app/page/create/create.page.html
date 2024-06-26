@@ -1,0 +1,115 @@
+<ion-content color="dark">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <div>
+        <div>
+          <ion-img src="../../../assets/img/Logo.png" class="Logo" style="display: inline-block; vertical-align: middle; height: 100px; width: 100px;">
+          </ion-img>
+          <ion-title style="display: inline-block; vertical-align:middle; font-size: x-large; padding-top: 25px;">
+            Registrar un nuevo producto
+          </ion-title>
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <!-- <form [formGroup]="Form" (ngSubmit)="handlesubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre:</ion-label>
+      <ion-input type="text" formControlName="nombre" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha de entrega:</ion-label>
+      <ion-input type="date" formControlName="fecha_entrega" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Precio:</ion-label>
+      <ion-input type="number" formControlName="precio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Proveedor:</ion-label>
+      <ion-input type="text" formControlName="proveedor" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input type="text" formControlName="descripcion" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Url de imagen:</ion-label>
+      <ion-input type="Url" formControlName="imagen" required></ion-input>
+    </ion-item>
+    
+    <ion-button type="submit">Submit</ion-button>
+  </form> -->
+   
+  <div>
+    
+    <div>
+      <ion-button shape="round" id="open-modal">Escanear Producto</ion-button>
+    </div>
+    <div class="col-1">
+      @if(value){
+        <ion-list class="list">
+          
+            
+              <div style="height: 670px; width: 100%;  background-color: black;">
+                <app-list [name]="name" [price]="price" [img]="img" [total_sum]="total_sum"></app-list>
+              </div>
+                   
+              
+        </ion-list>
+     
+    }
+      @else {
+        <ion-list  class="list">
+          <ion-item style="height: 620px; width: 100%;  background-color: #121212;">
+                  En espera..
+                </ion-item>        
+        </ion-list>
+        <div style="width: 100%; height: 50px; background-color: #1E1E1E;">
+          <div style="  height: 100%; width: 60%; display: inline-block; right: 0;">
+          </div>
+          <div style="display: inline-block; width: 40%; font-size: xx-large; color: aliceblue; vertical-align:super;"> 
+            Total: 0
+          </div>
+        </div>    
+            }
+      
+          
+       
+        
+      
+    </div>
+    <div class="col-2">
+      <div id="results">Your taken image manifests here...</div>
+  
+      <img [src]="webcamImage?.imageAsDataUrl" height="400px" />
+    </div>
+    <ion-modal #modal trigger="open-modal" >
+      <ng-template>
+        <ion-content>
+          <ion-toolbar>
+            <ion-title>Escaner</ion-title>
+            <ion-buttons slot="end">
+              <ion-button color="dark" (click)="modal.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+          
+          <div class="col-md-12">
+            <webcam
+              [trigger]="invokeObservable"
+              (imageCapture)="captureImg($event)"
+            ></webcam>
+          </div>
+
+          <div class="col-md-12">
+            <ion-button shape="round" (click)="getSnapshot()">Capturar imagen</ion-button>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
+  
+  
+</ion-content>

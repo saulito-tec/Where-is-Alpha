@@ -1,0 +1,34 @@
+
+<ion-content>
+  <div style="background-color: blue;">
+    
+    <ion-list class="list">
+            
+      
+        @for (item of name; track $index){
+          <ion-item style="padding-bottom: 5px;">
+            <ion-img src={{img[$index]}} style="height: 50px;">    
+            </ion-img>
+            <div style="padding-left: 10px;">
+              {{item}}
+              <ion-badge color="primary">{{price[$index]}}</ion-badge>
+              
+            </div>
+            <ion-button (click)="delete($index)" shape="round">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+            
+          </ion-item>
+        }
+        
+    
+    </ion-list>
+    <div style="width: 100%; height: 50px; background-color: #1E1E1E; position: fixed; bottom: 0; left: 0;display: flex; align-items: center;">
+      <div style="width: 100%;height: 40px;">
+        <span style="font-size: xx-large;">Total:{{total_sum}}</span>
+        <ion-button shape="round" style="width: 200px;"> Enviar</ion-button>
+      </div>
+      
+    </div> 
+  </div>
+</ion-content>
