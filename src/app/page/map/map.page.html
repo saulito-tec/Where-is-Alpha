@@ -1,0 +1,35 @@
+<div class="flex flex-col h-screen overflow-auto bg-white transition-colors duration-500">
+  <!-- Header -->
+  <header class="px-4 lg:px-6 h-16 flex items-center bg-white shadow-md transition-all duration-300 ease-in-out">
+    <a class="flex items-center justify-center transition-transform duration-300 hover:scale-105" routerLink="/">
+      <i class="fas fa-mountain h-8 w-8 text-green-600"></i>
+      <span class="ml-2 text-2xl font-bold text-black">MapET</span>
+    </a>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 overflow-auto">
+    <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center space-y-4 text-center">
+          <div class="space-y-2">
+            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-black">
+              MapET Interactive Map
+            </h1>
+            <p class="mx-auto max-w-[700px] text-gray-700 md:text-xl">
+              Select any location on the map to view detailed meteorological data for your farm.
+            </p>
+          </div>
+          <div class="w-full max-w-4xl h-[600px] bg-gray-200 rounded-lg shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-xl">
+            <p class="text-gray-500">Interactive map will be displayed here</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto flex flex-col gap-2 sm:flex-row py-6 w-full items-center px-4 md:px-6 border-t bg-white">
+    <p class="text-xs text-gray-500">© 2023 FarmFlow Inc. All rights reserved.</p>
+  </footer>
+</div>

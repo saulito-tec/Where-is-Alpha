@@ -11,7 +11,11 @@
 
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
+//@import '~src/styles/variables.scss';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* Basic CSS for apps built with Ionic */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
@@ -35,3 +39,47 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+/* Global Styles for Animations */
+
+/* Text Gradient Animation */
+/* global.scss */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* global.scss */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  .animate-text {
+    background-size: 200% auto;
+    animation: text-gradient 5s ease infinite;
+  }
+  
+  /* Fade-In Animation */
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+  .custom-heading {
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+  
